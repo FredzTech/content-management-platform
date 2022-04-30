@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Uploading</title>
+	<link rel="stylesheet" href="/views/imagesPage.ejs">
+</head>
+<style>
+	
+	h1{
+		text-decoration: underline;
+		color: black;
+	}
+
+	.file-data{
+		display: flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+		justify-content: space-between;
+		align-items:center;
+	}
+	.form-input{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.form-input input {
+		margin:0 10px;
+		height:30px;
+		width:190px;
+		font-size:20px;
+		font-style:italic;
+		font-family: 'Courier New', Courier, monospace;
+
+	}
+	label {
+		font-size:20px;
+		font-style:italic;
+		font-family: 'Courier New', Courier, monospace;
+		margin:0 2px;
+
+	}
+	.form-input textarea {
+		margin:0 10px;
+		height:100px;
+		width:190px;
+
+	}
+
+	img{
+		height:250px;
+		width:250px;
+		margin:0 5px;
+		border-radius:10px;
+	}
+	.image-container{
+		display:flex;
+		flex-wrap: wrap;
+	}
+
+	.form-button button{
+		height:40px;
+		width:120px;
+		font-size:18px;
+		border:none;
+		border-radius:5px;
+		background-color:rgb(32, 57, 149);
+		color:white;
+	}
+</style>
+
+<body>
+	<h1>To Upload Image on mongoDB </h1>
+	<div>
+		<form action="/" method="POST" enctype="multipart/form-data">
+			<div class="file-data">
+			<div class="form-input">
+				<label for="name">Image Title.</label>
+				<input type="text" id="name" placeholder="Name"
+					value="" name="name" required>
+			</div>
+			<div class="form-input">
+				<label for="desc">Image Description</label>
+				<textarea id="desc" name="desc" value=""
+						placeholder="Description" required>
+				</textarea>
+			</div>
+			<div class="image">
+				<label for="image">Upload Image</label>
+				<input type="file" id="image"
+					name="image" value="" required>
+			</div>
+			</div>
+			<div class="form-button">
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+
+</html>
