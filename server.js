@@ -82,6 +82,16 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/images", async (req, res) => {
+  try {
+    console.log(`Request from ${req.path} recieved successfully `);
+    let allImages = await User.find({});
+    res.send(allImages).status(300);
+  } catch (error) {
+    res.send(error).status(502);
+  }
+});
+
 // THE POST REQUEST FOR PROCESSING THE UPLOADED FILE.
 //====================================================
 app.post("/", (req, res, next) => {
