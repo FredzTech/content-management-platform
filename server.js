@@ -106,8 +106,8 @@ app.post("/", (req, res, next) => {
       desc: req.body.desc,
       location: req.file.location,
     });
-
-    res.status(200).json({ data: req.file.location });
+    console.log("Image data created successfully.");
+    res.status(200).redirect("/");
   });
 });
 

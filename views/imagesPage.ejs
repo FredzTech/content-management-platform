@@ -8,57 +8,58 @@
 	<link rel="stylesheet" href="/views/imagesPage.ejs">
 </head>
 <style>
-	
-	h1{
-		text-decoration: underline;
-		color: black;
+	body{
+   /* ff 3.6+ */
+    background:-moz-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(24, 106, 117, 1) 52%, rgba(2, 59, 66, 1) 98%); 
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(24, 106, 117, 1) 52%, rgba(2, 59, 66, 1) 98%);
+
+    /* opera 11.10+ */
+    background:-o-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(24, 106, 117, 1) 52%, rgba(2, 59, 66, 1) 98%);
+
+    /* ie 6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#023B42', endColorstr='#000000', GradientType=0 );
+
+    /* ie 10+ */
+    background:-ms-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(24, 106, 117, 1) 52%, rgba(2, 59, 66, 1) 98%);
+
+    /* global 94%+ browsers support */
+    background:linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(24, 106, 117, 1) 52%, rgba(2, 59, 66, 1) 98%);ground:linear-gradient(30deg, rgba(31, 32, 50, 1) 0%, rgba(17, 9, 96, 1) 92%);
+
+	background-size: cover;
+
+};
+
+.list-box{
+	list-style-type: none; 
+	color:white; 
+	margin:2px 0px;
+}
+.list-item{
+	list-style-type: none;
+	color:white;
+	margin:2px 0px;
+}
+
+.container{
+    margin:0 25px;
+    display: flex;
+    flex-direction:column;
+}
+h1{
+	text-decoration: underline;
+	color: black;
+}
+form{
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
 	}
 
-	.file-data{
-		display: flex;
-		flex-direction:row;
-		flex-wrap:wrap;
-		justify-content: space-between;
-		align-items:center;
-	}
-	.form-input{
-		display:flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.form-input input {
-		margin:0 10px;
-		height:30px;
-		width:190px;
-		font-size:20px;
-		font-style:italic;
-		font-family: 'Courier New', Courier, monospace;
-
-	}
-	label {
-		font-size:20px;
-		font-style:italic;
-		font-family: 'Courier New', Courier, monospace;
-		margin:0 2px;
-
-	}
-	.form-input textarea {
-		margin:0 10px;
-		height:100px;
-		width:190px;
-
-	}
-
-	img{
-		height:250px;
-		width:250px;
-		margin:0 5px;
-		border-radius:10px;
-	}
-	.image-container{
-		display:flex;
-		flex-wrap: wrap;
+	.form-button{
+		align-self: center;
+		margin-top:20px;
 	}
 
 	.form-button button{
@@ -70,35 +71,114 @@
 		background-color:rgb(32, 57, 149);
 		color:white;
 	}
+
+	.form-input{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+       
+	}
+
+	.form-input input {
+		margin:10px 0;
+		height:2rem;
+		width:40vw;
+		font-size:20px;
+		font-style:italic;
+		font-family: 'Courier New', Courier, monospace;
+        outline:none;
+        border:none;
+        border-radius:5px;
+	}
+
+	textarea {
+		margin:0 10px;
+		height:100px;
+		width:40vw;
+        border:none;
+        outline:none;
+        border-radius:5px;
+
+	}
+    .image-box{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:center;
+		margin:auto;
+		padding:auto;
+	}
+    .image-container{
+		display:flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+        align-items:flex-start;
+        justify-content:center;
+				
+	}
+    .image-card{
+		margin:0 5px;
+		display:flex;
+		flex-direction: column;
+		align-items:center;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	img{
+		height:200px;
+		width:100%;
+		margin:0 5px;
+        border:1px solid black;
+		border-radius:10px;
+	}
+	
+	h1,h2,h3,p,label{
+		color:white;
+	}
+
+	h2,h3{
+		text-decoration: underline;
+	}
 </style>
 
 <body>
 	<h1>To Upload Image on mongoDB </h1>
 	<div>
 		<form action="/" method="POST" enctype="multipart/form-data">
-			<div class="file-data">
 			<div class="form-input">
-				<label for="name">Image Title.</label>
-				<input type="text" id="name" placeholder="Name"
+				<input type="text" id="name" placeholder="Input Image Title"
 					value="" name="name" required>
 			</div>
 			<div class="form-input">
-				<label for="desc">Image Description</label>
 				<textarea id="desc" name="desc" value=""
-						placeholder="Description" required>
+						placeholder="Describe your image" required>
 				</textarea>
 			</div>
-			<div class="image">
-				<label for="image">Upload Image</label>
+			<div class="form-input image">
 				<input type="file" id="image"
 					name="image" value="" required>
-			</div>
 			</div>
 			<div class="form-button">
 				<button type="submit">Submit</button>
 			</div>
 		</form>
 	</div>
+
+	<div class="image-box">
+
+	<h1 class="image-box-title">IMAGES IN THE DATABASE</h1>
+
+	<div class="image-container">
+
+      <% items.forEach(function(item) { %>
+        <div class="image-card">
+          <img src =<%= item.location %> alt= "AboutUs Image"></img>
+          <p class=" image-title"> <%= item.company %></p>
+		</div>    
+      <% }); %>
+	</div>
+</div>
 
 </body>
 
