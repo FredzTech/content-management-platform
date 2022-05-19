@@ -1,7 +1,7 @@
 {
-  "name": "image_handler",
+  "name": "content-management-platform",
   "version": "1.0.0",
-  "description": "An application that saves images to MongoDB",
+  "description": "An application that saves images to MongoDB for viewing in the front end",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
